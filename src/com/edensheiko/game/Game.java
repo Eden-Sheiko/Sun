@@ -2,7 +2,7 @@ package com.edensheiko.game;
 
 import com.sun.security.jgss.GSSUtil;
 import kotlin.reflect.jvm.internal.impl.util.collectionUtils.ScopeUtilsKt;
-
+import com.edensheiko.game.grahics.Screen;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -19,14 +19,17 @@ public class Game extends Canvas implements Runnable{
     private  Thread thread;
     private JFrame frame;
     private boolean running = false;
+    private Screen screen;
     private BufferedImage image = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData(); // convert image to array of ints
 
     public Game(){
            Dimension size = new Dimension(width*scale,height*scale);
            setPreferredSize(size);
+           screen=new Screen(width,height);
 
            frame = new JFrame();
+
     }
     // thread sub pros for game
     /*
