@@ -10,4 +10,15 @@ public class Screen {
         this.height=height;
         pixels = new int[width*height];
     }
+    public void render()
+    {
+        for(int i=0;i<height;i++)
+        {
+            for(int j=0;j<width;j++)
+            {
+                
+            }
+        }
+    }
+
 }
